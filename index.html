@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Cozy Wilds"><meta name="theme-color" content="#1b1410"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icons/icon-180.png"><link rel="icon" href="icons/icon-192.png">
+<title>Cozy Wilds — Hammer &amp; Pixel Games</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<canvas id="c"></canvas>
+<div id="loading">Loading the wilds…</div>
+<div id="title">
+  <div class="logo"><small>Hammer &amp; Pixel Games presents</small><h1>Cozy Wilds</h1><p>a gentle wilderness survival RPG</p></div>
+  <div class="menu"><button id="btnPlay">▶ Play</button><button id="btnNew">✦ New game</button><button id="btnHow">? How to play</button><button data-set="sound">🔊 Sound</button></div>
+  <div id="how" class="hidden card">No hunger or thirst timers, no rush. Boiled water, toasted berries, a warm fire and a good night's sleep give gentle buffs. Gather 🪵 wood from trees, fill your 🫙 jug at the lake, stream or well, and boil it on the fire. Build a lean-to anywhere, then work up the shelter ladder: tarp camp, the old trapper shack or the camper van, then fortify or upgrade it. Wolves, coyotes, bears and raccoons only prowl at night: they keep away from firelight, and sleeping in a shelter is always safe. They do like to ransack empty camps, so expect a little repair work.<br><br><b>Desktop:</b> WASD/arrows or click to walk · E/Space act · B build · F feed fire · Z sleep · wheel zoom · H hide UI · Esc pause.<br><b>Touch:</b> left thumb joystick · Ⓐ act · 🔨 build · 🪵 feed · 💤 sleep · pinch to zoom · two fingers to pan.</div>
+  <div class="ver">prototype v0.2 · map: Dark Forest island</div>
+</div>
+<div id="ui" class="hidden">
+  <div id="status" class="panel"><div class="hdr">☰ <span id="clock"></span></div><div class="body">
+    <div id="region"></div>
+    <div id="buffs"></div><div id="tier"></div></div></div></div>
+  <div id="bag" class="panel"><div class="hdr">🎒 Pack</div><div class="body"><div id="inv"></div><div class="dim">Fires: <span id="fireInfo"></span></div><div id="shelterList"></div></div></div>
+  <div id="mini" class="panel collapsed"><div class="hdr">🗺 Map</div><div class="body"><canvas id="miniC" width="128" height="128"></canvas></div></div>
+  <div id="log" class="panel collapsed"><div class="hdr">📜 Journal</div><div class="body" id="logList"></div></div>
+  <div id="corner"><button id="hideAll" title="Hide UI (H)">👁</button><button id="btnFull" title="Fullscreen">⛶</button><button id="btnPause" title="Pause (Esc)">⏸</button></div>
+  <div id="prompt" class="hidden"></div>
+  <div id="toasts"></div>
+  <div id="buildMenu" class="hidden card"><b>Build &amp; craft</b><div id="buildList"></div><div class="dim">Shelters and fires go in front of you. Better shelters unlock new recipes.</div><button id="btnCloseBuild">✕ Close</button></div>
+  <div id="touch"><button id="btnA" class="big">Act</button><button id="btnBuild">🔨</button><button id="btnFeed">🪵</button><button id="btnSleep">💤</button></div>
+  <div id="joy"><div id="knob"></div></div>
+</div>
+<div id="pause" class="hidden"><div class="card menu"><h2>Paused</h2><button id="btnResume">▶ Resume</button>
+  <div class="sets"><button data-set="sound">🔊 Sound</button><button data-set="vibrate">📳 Vibration</button><button data-set="shake">🫨 Screen shake</button><button data-set="flash">✨ Flicker &amp; twinkle</button><button data-set="bigText">🔠 Large text</button></div>
+  <label>Master <input id="vol-master" type="range" min="0" max="1" step="0.05"></label><label>Effects <input id="vol-sfx" type="range" min="0" max="1" step="0.05"></label><label>Ambience <input id="vol-amb" type="range" min="0" max="1" step="0.05"></label>
+  <button id="btnQuit">⌂ Save &amp; main menu</button><div class="dim">Your camp saves automatically, and every time you sleep.</div></div></div></div>
+<script type="module" src="js/main.js"></script>
+</body></html>
